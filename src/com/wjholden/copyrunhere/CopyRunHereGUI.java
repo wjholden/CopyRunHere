@@ -95,21 +95,23 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         commandComboBox = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        pollAllNodesButton = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         configTextArea = new javax.swing.JTextArea();
+        previousButton = new javax.swing.JButton();
+        nextButton = new javax.swing.JButton();
+        firstButton = new javax.swing.JButton();
+        lastButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         openNodesButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         nodesTextArea = new javax.swing.JTextArea();
         saveNodesButton = new javax.swing.JButton();
-        commitNodesButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         openCommandButton = new javax.swing.JButton();
         saveCommandButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         commandTextArea = new javax.swing.JTextArea();
-        commitCommandButton = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -119,7 +121,7 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         jPanel5 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
+        jScrollPane6 = new javax.swing.JScrollPane();
         jTextPane2 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -128,6 +130,7 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
         jTabbedPane1.setToolTipText("");
         jTabbedPane1.setFont(jTabbedPane1.getFont());
         jTabbedPane1.setName(""); // NOI18N
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(3721, 596));
 
         jLabel3.setText("Node");
 
@@ -140,10 +143,10 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Poll all nodes");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        pollAllNodesButton.setText("Poll all nodes");
+        pollAllNodesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                pollAllNodesButtonActionPerformed(evt);
             }
         });
 
@@ -152,34 +155,71 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
         configTextArea.setRows(5);
         jScrollPane5.setViewportView(configTextArea);
 
+        previousButton.setText("Previous");
+        previousButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                previousButtonActionPerformed(evt);
+            }
+        });
+
+        nextButton.setText("Next");
+        nextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextButtonActionPerformed(evt);
+            }
+        });
+
+        firstButton.setText("First");
+        firstButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                firstButtonActionPerformed(evt);
+            }
+        });
+
+        lastButton.setText("Last");
+        lastButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lastButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nodeComboBox, 0, 541, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(commandComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1))))
-                    .addComponent(jScrollPane5))
+                        .addComponent(firstButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(previousButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nextButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lastButton)
+                        .addGap(0, 383, Short.MAX_VALUE))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nodeComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pollAllNodesButton))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(commandComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)))
                 .addContainerGap())
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel3, jLabel4});
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, pollAllNodesButton});
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {firstButton, lastButton, nextButton, previousButton});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,14 +228,21 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(nodeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
+                    .addComponent(pollAllNodesButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(commandComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(firstButton)
+                    .addComponent(previousButton)
+                    .addComponent(nextButton)
+                    .addComponent(lastButton))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Main", jPanel1);
@@ -220,13 +267,6 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
             }
         });
 
-        commitNodesButton.setText("Commit to Main");
-        commitNodesButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                commitNodesButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -239,9 +279,7 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
                         .addComponent(openNodesButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(saveNodesButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(commitNodesButton)
-                        .addGap(0, 400, Short.MAX_VALUE)))
+                        .addGap(0, 511, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -250,10 +288,9 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(openNodesButton)
-                    .addComponent(saveNodesButton)
-                    .addComponent(commitNodesButton))
+                    .addComponent(saveNodesButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -277,15 +314,7 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
 
         commandTextArea.setColumns(20);
         commandTextArea.setRows(5);
-        commandTextArea.setText("show tech-support");
         jScrollPane2.setViewportView(commandTextArea);
-
-        commitCommandButton.setText("Commit to Main");
-        commitCommandButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                commitCommandButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -299,9 +328,7 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
                         .addComponent(openCommandButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(saveCommandButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(commitCommandButton)
-                        .addGap(0, 400, Short.MAX_VALUE)))
+                        .addGap(0, 511, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -310,10 +337,9 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(openCommandButton)
-                    .addComponent(saveCommandButton)
-                    .addComponent(commitCommandButton))
+                    .addComponent(saveCommandButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -356,7 +382,7 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addContainerGap(449, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Authentication", jPanel4);
@@ -379,14 +405,16 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("License", jPanel6);
 
+        jTextPane2.setEditable(false);
         jTextPane2.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jTextPane2.setText("CopyRunHere uses and ships with several open-source dependencies. These programs are listed below with their licenses, versions, websites, and links to the source code. These libraries were not modified for use with this program.\n\nSSHJ\nLicense:        Apache 2\nVersion:        0.14.0\nProject Page:   https://github.com/hierynomus/sshj\nSource Code:    https://github.com/hierynomus/sshj/archive/v0.14.0.zip\n\nSLF4J\nLicense:        MIT\nVersion:        1.7.12\nProject Page:   http://www.slf4j.org/\nSource Code:    http://www.slf4j.org/dist/slf4j-1.7.12.zip\n\nBouncyCastle\nLicense:        MIT\nVersion:        1.53\nProject Page:   https://www.bouncycastle.org/\nSource Code:    https://www.bouncycastle.org/download/bcpkix-jdk15on-153.zip");
-        jScrollPane4.setViewportView(jTextPane2);
+        jTextPane2.setText("CopyRunHere uses and ships with several open-source dependencies. These programs are listed below with their licenses, versions, websites, and links to the source code. These libraries were not modified for use with this program.\n\nSSHJ\nLicense:        Apache 2\nVersion:        0.19.0\nProject Page:   https://github.com/hierynomus/sshj\nSource Code:    http://repo1.maven.org/maven2/com/hierynomus/sshj/0.19.0/sshj-0.19.0-sources.jar\nJAR:            http://repo1.maven.org/maven2/com/hierynomus/sshj/0.19.0/sshj-0.19.0.jar\n\nSLF4J\nLicense:        MIT\nVersion:        1.7.22\nProject Page:   http://www.slf4j.org/\nSource Code:    http://www.slf4j.org/dist/slf4j-1.7.22.zip\nJAR:            (use slf4j-api-1.7.22.jar and slf4j-api-1.7.22.jar from above)\n\nBouncyCastle\nLicense:        MIT\nVersion:        1.55\nProject Page:   https://www.bouncycastle.org/\nSource Code:    https://www.bouncycastle.org/download/bcpkix-jdk15on-155.zip\nJAR:            https://downloads.bouncycastle.org/java/bcpkix-jdk15on-155.jar\n\nEdDSA-Java (from I2P)\nLicense:        CC0 1.0 Universal\nVersion:        0.1.0\nProject Page:   https://geti2p.net/\nSource Code:    https://github.com/str4d/ed25519-java\nJAR:            http://central.maven.org/maven2/net/i2p/crypto/eddsa/0.1.0/eddsa-0.1.0.jar");
+        jTextPane2.setCaretPosition(0);
+        jScrollPane6.setViewportView(jTextPane2);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -394,15 +422,15 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 693, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 693, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Open Source", jPanel5);
@@ -411,16 +439,16 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 718, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 534, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -474,20 +502,53 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
         writeToFile(saveCommandFileChooser, commandTextArea);
     }//GEN-LAST:event_saveCommandButtonActionPerformed
 
-    private void commitNodesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commitNodesButtonActionPerformed
-        updateNodes();
-    }//GEN-LAST:event_commitNodesButtonActionPerformed
-
-    private void commitCommandButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commitCommandButtonActionPerformed
-        updateCommands();
-    }//GEN-LAST:event_commitCommandButtonActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if (usernameTextField.getText().length() == 0 || 
-                passwordTextField.getText().length() == 0) {
-            JOptionPane.showMessageDialog(rootPane, "Username or password is empty", null, JOptionPane.ERROR_MESSAGE);
+    private void lastButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastButtonActionPerformed
+        if (network.size() > 0 && nodeComboBox.getItemCount() > 0) {
+            nodeComboBox.setSelectedIndex(network.size() - 1);
+            updateResult();
         }
-        
+    }//GEN-LAST:event_lastButtonActionPerformed
+
+    private void firstButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstButtonActionPerformed
+        System.err.println("commandComboBox.getSelectedIndex() = " +
+            commandComboBox.getSelectedIndex());
+        if (commandComboBox.getItemCount() > 0) {
+            commandComboBox.setSelectedIndex(0);
+        }
+
+        if (network.size() > 0) {
+            nodeComboBox.setSelectedIndex(0);
+            updateResult();
+        }
+    }//GEN-LAST:event_firstButtonActionPerformed
+
+    private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
+        if (nodeComboBox.getItemCount() > 0) {
+            final int selection = nodeComboBox.getSelectedIndex();
+            if (network.size() > selection + 1) {
+                nodeComboBox.setSelectedIndex(selection + 1);
+                updateResult();
+            }
+        }
+    }//GEN-LAST:event_nextButtonActionPerformed
+
+    private void previousButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previousButtonActionPerformed
+        if (network.size() > 0 && nodeComboBox.getItemCount() > 0) {
+            nodeComboBox.setSelectedIndex(nodeComboBox.getSelectedIndex() - 1);
+            updateResult();
+        }
+    }//GEN-LAST:event_previousButtonActionPerformed
+
+    private void pollAllNodesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pollAllNodesButtonActionPerformed
+        updateNodes();
+        updateCommands();
+
+        if (usernameTextField.getText().length() == 0 ||
+            passwordTextField.getText().length() == 0) {
+            JOptionPane.showMessageDialog(rootPane, "Username or password is empty", null, JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         network = new HashMap<>();
         for (String node : nodes) {
             try {
@@ -501,7 +562,7 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
                 ex.printStackTrace();
             }
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_pollAllNodesButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         updateResult();
@@ -525,8 +586,10 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
         String command = commandComboBox.getSelectedItem().toString();
         if (device.getConfig().containsKey(command)) {
             configTextArea.setText(device.getConfig().get(command));
-            configTextArea.setCaretPosition(0);
+        } else {
+            configTextArea.setText("No data for \n" + node + "\n" + command);
         }
+        configTextArea.setCaretPosition(0);
     }
     
     /**
@@ -568,11 +631,9 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
     private javax.swing.JFileChooser authKeyFileChooser;
     private javax.swing.JComboBox commandComboBox;
     private javax.swing.JTextArea commandTextArea;
-    private javax.swing.JButton commitCommandButton;
-    private javax.swing.JButton commitNodesButton;
     private javax.swing.JTextArea configTextArea;
+    private javax.swing.JButton firstButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -588,9 +649,12 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JTextPane jTextPane2;
+    private javax.swing.JButton lastButton;
+    private javax.swing.JButton nextButton;
     private javax.swing.JComboBox nodeComboBox;
     private javax.swing.JTextArea nodesTextArea;
     private javax.swing.JButton openCommandButton;
@@ -598,6 +662,8 @@ public class CopyRunHereGUI extends javax.swing.JFrame {
     private javax.swing.JButton openNodesButton;
     private javax.swing.JFileChooser openTargetFileChooser;
     private javax.swing.JPasswordField passwordTextField;
+    private javax.swing.JButton pollAllNodesButton;
+    private javax.swing.JButton previousButton;
     private javax.swing.JButton saveCommandButton;
     private javax.swing.JFileChooser saveCommandFileChooser;
     private javax.swing.JButton saveNodesButton;
